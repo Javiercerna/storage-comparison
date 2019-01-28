@@ -1,4 +1,5 @@
 from main.generate_data import generateData
+from main.utils import clearPreviousData, storeDataInJsonFile
 
 import datetime
 import json
@@ -25,17 +26,6 @@ def combineJsonFiles():
     combined_json = combineJsonData(candidate_files)
     with open('results.json', 'w') as f:
         json.dump(combined_json, f)
-
-def clearPreviousData():
-    filenames = os.listdir(os.getcwd())
-    for filename in filenames:
-        if filename.endswith('.json'):
-            os.remove(filename)
-
-
-def storeDataInJsonFile(data_list, file_suffix):
-    with open('data%03d.json' % (file_suffix), 'w') as f:
-        json.dump(data_list, f)
 
 
 # Usual input (1 s of data for 5 minutes = 300 data values

@@ -1,20 +1,7 @@
 from generate_data import generateData
+from utils import clearPreviousData, storeDataInJsonFile
 
-import json
 import time
-import os
-
-
-def clearPreviousData():
-    filenames = os.listdir(os.getcwd())
-    for filename in filenames:
-        if filename.endswith('.json'):
-            os.remove(filename)
-
-
-def storeDataInJsonFile(data_list):
-    with open('data.json', 'w') as f:
-        json.dump(data_list, f)
 
 
 # Usual input (1 s of data for 5 minutes = 300 data values)
