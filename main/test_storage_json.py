@@ -1,5 +1,5 @@
-from generate_data import generateData
-from utils import clearPreviousData, storeDataInJsonFile
+from main.generate_data import generateData
+from main.utils import clearPreviousData, storeDataInJsonFile
 
 import time
 
